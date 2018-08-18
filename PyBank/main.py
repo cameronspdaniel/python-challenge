@@ -10,17 +10,19 @@ with open(csvpath, 'r') as csv_file:
 
     month_count = 0
     profit = 0
-    total_change = int(row[1])
+    next_profit_value = 867884
+    difference_sum = 0
     for row in csv_reader:
+        
         month_count += 1
+
         profit += int(row[1])
-        if int(row[1]) >= 0 and int(row[1]) >= total_change then:
-            total_change = total_change 
-        total_change = total_change - int(row[1])
-        avg_change = total_change / 86
+
+        
+        difference = int(row[1]) - next_profit_value
+        next_profit_value = int(row[1])
+        difference_sum += difference
+
     print("Total Months: " + str(month_count))
     print("Total Profit: $" + str(profit))
-    print(avg_change)
-        
-
-            
+    print("Average Change: $" + str(difference_sum / 85)) 
